@@ -1,0 +1,268 @@
+:root {
+  --primary-black-text-color: #303030;
+  --primary-white-text-color: #ffffff;
+  --secondary-grey-text-color: #9da4bd;
+  --secondary-black-text-color: #555555;
+  --accent-color: #ff6c00;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* -----Universal styles----- */
+.link {
+  text-decoration: none;
+}
+.list {
+  list-style: none;
+}
+.pretitle {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+.title {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+}
+.aftertitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+}
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  border: 1px solid var(--accent-color);
+  border-radius: 25px;
+}
+.btn:hover,
+.btn:focus {
+  background-color: var(--accent-color);
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* -----Header section----- */
+header {
+  background-color: #6e6862;
+}
+.header-link {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: var(--primary-white-text-color);
+}
+.header-tel {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: var(--primary-white-text-color);
+}
+
+.header-btn {
+  color: var(--primary-white-text-color);
+}
+
+/* -----Hero section----- */
+.hero {
+  background-color: #6e6862;
+}
+.hero-pretitle {
+  color: rgba(157, 164, 189, 0.6);
+}
+.hero-title {
+  font-size: 72px;
+  color: var(--primary-white-text-color);
+}
+.hero-aftertitle {
+  color: #9da4bd;
+}
+.hero-link {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+
+  color: var(--primary-black-text-color);
+}
+.hero-link:hover,
+.hero-link:focus {
+  color: var(--accent-color);
+}
+
+/* -----About section----- */
+.about-pretitle {
+  color: var(--primary-black-text-color);
+}
+.about-title {
+  font-size: 42px;
+  color: var(--primary-black-text-color);
+}
+.about-aftertitle {
+  color: #555555;
+}
+.about-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.86;
+  letter-spacing: 0.02em;
+  color: #555555;
+}
+.about-btn {
+  color: var(--primary-black-text-color);
+}
+
+/* -----Price section----- */
+.price {
+  background-color: #6e6862;
+}
+.price-pretitle {
+  color: rgba(157, 164, 189, 0.6);
+}
+.price-title {
+  font-size: 42px;
+  color: var(--primary-white-text-color);
+}
+.price-elem {
+  color: var(--secondary-grey-text-color);
+}
+.price-btn {
+  color: var(--primary-white-text-color);
+}
+
+/* -----Achivements section----- */
+.achievements-item > span {
+  font-size: 42px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: var(--primary-black-text-color);
+}
+.achievements-item > sup {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: center;
+  color: var(--accent-color);
+}
+.achievements-item > p {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-align: center;
+  color: var(--primary-black-text-color);
+}
+.achievements-pretitle {
+  color: var(--primary-black-text-color);
+}
+.achievements-title {
+  font-size: 42px;
+  color: var(--primary-black-text-color);
+}
+.achievements-aftertitle {
+  color: var(--secondary-black-text-color);
+}
+
+/* -----Our burbers section----- */
+.barbers-pretitle {
+  color: var(--primary-black-text-color);
+}
+.barbers-title {
+  font-size: 42px;
+  color: var(--primary-black-text-color);
+}
+.barbers-name {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.39;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--primary-black-text-color);
+}
+.barbers-info {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+
+/* -----Gallery section----- */
+.gallery-pretitle {
+  color: var(--primary-black-text-color);
+}
+
+/* -----Form section----- */
+.form {
+  background-color: #6e6862;
+}
+.form-title {
+  font-size: 42px;
+  color: var(--primary-white-text-color);
+}
+
+/* -----Contacts section----- */
+.contacts {
+  background-color: #6e6862;
+}
+.contacts-title {
+  font-size: 42px;
+  color: var(--primary-white-text-color);
+}
+.contacts-link {
+  font-style: normal;
+  color: var(--secondary-grey-text-color);
+}
+.contacts-addresslink {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--secondary-grey-text-color);
+}
+.contacts-pretitle {
+  color: var(--primary-white-text-color);
+}
+.contacts-aftertitle {
+  color: var(--secondary-grey-text-color);
+}
+
+/* -----Footer section----- */
+.footer-copy {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+  color: var(--secondary-grey-text-color);
+}
+.footer-link {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+  color: var(--primary-black-text-color);
+}
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--accent-color);
+}
