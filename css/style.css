@@ -67,12 +67,15 @@ body {
   letter-spacing: 0.02em;
 }
 .btn {
+  min-width: 160px;
+  height: 40px;
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+  background-color: transparent;
 
   border: 1px solid var(--accent-color);
   border-radius: 25px;
@@ -96,9 +99,17 @@ body {
 header {
   background-color: #6e6862;
 }
+header .container {
+  display: flex;
+  align-items: center;
+}
 .header-logo {
   display: block;
+  margin-right: 130px;
   padding: 32px 0;
+}
+.header-list {
+  display: flex;
 }
 .header-link {
   font-weight: 600;
@@ -106,6 +117,12 @@ header {
   line-height: 1.33;
   letter-spacing: 0.1em;
   color: var(--primary-white-text-color);
+}
+.header-list li + li {
+  margin-left: 30px;
+}
+.header-contacts {
+  margin-left: auto;
 }
 .header-tel {
   font-weight: 600;
@@ -116,6 +133,7 @@ header {
 }
 
 .header-btn {
+  margin-left: 40px;
   color: var(--primary-white-text-color);
 }
 
@@ -123,8 +141,15 @@ header {
 .hero {
   background-color: #6e6862;
 }
+.hero .container {
+  display: flex;
+}
+.hero-list {
+  width: 100px;
+}
 .hero-right {
   padding: 184px 526px 208px 100px;
+  flex-grow: 1;
 }
 .hero-pretitle {
   color: rgba(157, 164, 189, 0.6);
@@ -153,6 +178,18 @@ header {
 /* -----About section----- */
 .about {
   padding: 120px 0;
+}
+.about .container {
+  display: flex;
+}
+.about-list {
+  display: flex;
+}
+.about-items:not(:last-child) {
+  margin-right: 30px;
+}
+.about-wrap {
+  padding-left: 30px;
 }
 .about-pretitle {
   color: var(--primary-black-text-color);
@@ -190,12 +227,22 @@ header {
   color: var(--primary-white-text-color);
   margin-bottom: 44px;
 }
+.price-list-wrap {
+  display: flex;
+  gap: 30px;
+}
 .price-list {
   border: 1px solid #555555;
   padding: 30px 20px;
+  flex-grow: 1;
 }
 .price-item {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: var(--main-margin-bottom);
+}
+.price-item:last-child {
+  margin-bottom: 0;
 }
 .price-elem {
   color: var(--secondary-grey-text-color);
@@ -211,12 +258,23 @@ header {
 .achievements {
   padding: 120px 0;
 }
+.achievements-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 370px;
+}
 .achievements-item {
   background-color: #f7f7f7;
   width: 170px;
   height: 133px;
   padding: 20px 24px;
   text-align: center;
+}
+.achievements-item:nth-child(2n + 1) {
+  margin-right: 30px;
+}
+.achievements-item:nth-child(2n) {
+  margin-top: 30px;
 }
 .achievements-item > span {
   display: inline-block;
@@ -263,6 +321,15 @@ header {
   color: var(--primary-black-text-color);
   margin-bottom: 44px;
 }
+.barbers-list {
+  display: flex;
+}
+.barbers-item {
+  flex-basis: calc((100% - 60px) / 3);
+}
+.barbers-item:not(:last-child) {
+  margin-right: 30px;
+}
 .barbers-name {
   font-weight: 400;
   font-size: 18px;
@@ -289,6 +356,15 @@ header {
 .gallery-pretitle {
   color: var(--primary-black-text-color);
   margin-bottom: 44px;
+}
+.gallery-list {
+  display: flex;
+}
+.gallery-item {
+  width: calc((100%-90px) / 4);
+}
+.gallery-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* -----Form section----- */
