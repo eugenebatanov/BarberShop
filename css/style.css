@@ -1,11 +1,12 @@
 :root {
+  --accent-color: #ff6c00;
   --primary-black-text-color: #303030;
   --primary-white-text-color: #ffffff;
   --secondary-grey-text-color: #9da4bd;
   --secondary-black-text-color: #555555;
   --white-background-color: #ffffff;
   --grey-background-color: #f7f7f7;
-  --accent-color: #ff6c00;
+  --pretitle-grey-color: rgba(157, 164, 189, 0.6);
 
   --main-font: 'Open Sans', sans-serif;
 
@@ -40,7 +41,7 @@ body {
 /* -----Universal styles----- */
 .container {
   width: 1200px;
-  padding: 0 15px;
+  padding: 120px 15px;
   margin: 0 auto;
   outline: 1px solid red;
 }
@@ -51,12 +52,23 @@ body {
   list-style: none;
 }
 .pretitle {
+  display: flex;
+  align-items: center;
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
   margin-bottom: var(--main-margin-bottom);
 }
+.pretitle::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  display: block;
+  margin-right: 20px;
+  background-color: currentColor;
+}
+
 .title {
   font-family: 'Raleway', sans-serif;
   line-height: 1.17;
@@ -105,7 +117,9 @@ header {
 header .container {
   display: flex;
   align-items: center;
-}
+  padding-top: 0;
+  padding-bottom: 0;
+  }
 .header-logo {
   display: block;
   margin-right: 130px;
@@ -143,6 +157,9 @@ header .container {
 /* -----Hero section----- */
 .hero .container {
   display: flex;
+  padding-top: 0;
+  padding-bottom: 0;
+
 }
 .hero-list {
   width: 100px;
@@ -161,7 +178,7 @@ header .container {
   background-color: var(--primary-black-text-color);
 }
 .hero-pretitle {
-  color: rgba(157, 164, 189, 0.6);
+  color: var(--pretitle-grey-color);
 }
 .hero-title {
   font-size: 72px;
@@ -185,9 +202,6 @@ header .container {
 }
 
 /* -----About section----- */
-.about {
-  padding: 120px 0;
-}
 .about .container {
   display: flex;
 }
@@ -225,7 +239,6 @@ header .container {
 
 /* -----Price section----- */
 .price {
-  padding: 120px 0;
   max-width: 1600px;
   margin: 0 auto;
   background-image: url('../img/prices_bg.png');
@@ -235,7 +248,7 @@ header .container {
   background-position: center;
 }
 .price-pretitle {
-  color: rgba(157, 164, 189, 0.6);
+  color: var(--pretitle-grey-color);
 }
 .price-title {
   font-size: 42px;
@@ -247,20 +260,36 @@ header .container {
   gap: 30px;
 }
 .price-list {
-  border: 1px solid #555555;
   padding: 30px 20px;
   flex-grow: 1;
+}
+.price-list:first-child {
+  background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+}
+.price-list:last-child {
+  background: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
 }
 .price-item {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   margin-bottom: var(--main-margin-bottom);
 }
 .price-item:last-child {
   margin-bottom: 0;
 }
+.price-item::after {
+  content: '';
+  height: 1px;
+  margin: 0 12px;
+  flex-grow: 1;
+  background-color: rgba(157, 164, 189, 0.12);
+}
 .price-elem {
   color: var(--secondary-grey-text-color);
+}
+.price-elem:last-child {
+  order: 1;
 }
 .price-btn {
   color: var(--primary-white-text-color);
@@ -270,13 +299,18 @@ header .container {
 }
 
 /* -----Achivements section----- */
-.achievements {
-  padding: 120px 0;
+.achievements .container {
+  display: flex;
+  justify-content: center;
+}
+.achivements-benefits {
+  width: calc(50% + 15px);
 }
 .achievements-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 370px;
+  /* width: calc(50% + 15px); */
 }
 .achievements-item {
   background-color: #f7f7f7;
@@ -292,14 +326,16 @@ header .container {
   margin-top: 30px;
 }
 .achievements-item > span {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   font-size: 42px;
   line-height: 1.36;
   text-align: center;
   letter-spacing: 0.05em;
   color: var(--primary-black-text-color);
 }
-.achievements-item > sup {
+.achievements-item > span::after {
+  content: '+';
   font-weight: 600;
   font-size: 16px;
   line-height: 1.38;
@@ -326,7 +362,6 @@ header .container {
 
 /* -----Our burbers section----- */
 .barbers {
-  padding: 120px 0;
   background-color: var(--grey-background-color);
 }
 .barbers-pretitle {
@@ -391,9 +426,6 @@ header .container {
 }
 
 /* -----Gallery section----- */
-.gallery {
-  padding: 120px 0;
-}
 .gallery-pretitle {
   color: var(--primary-black-text-color);
   margin-bottom: 44px;
@@ -408,9 +440,21 @@ header .container {
   margin-right: 30px;
 }
 
-/* -----Form section----- */
+/* -----Booking and contacts section----- */
+.contact-wrap {
+  background: #191c26;
+  background-image: url(../img/contacts_bg.png);
+  background-repeat: no-repeat;
+  background-size: calc(50% - 15px);
+  background-position: center right;
+}
+.contact-wrap .container {
+  display: flex;
+}
+
+/* -----Contacts section----- */
 .form {
-  background-color: #6e6862;
+  width: calc(50% + 15px);
 }
 .form-title {
   font-size: 42px;
@@ -419,11 +463,17 @@ header .container {
 
 /* -----Contacts section----- */
 .contacts {
-  background-color: #6e6862;
+  width: calc(50% - 15px);
+  padding-left: 100px;  
 }
 .contacts-title {
+  margin-bottom: 40px;
   font-size: 42px;
   color: var(--primary-white-text-color);
+}
+.contacts-address {
+  width: 270px;
+  margin-bottom: 70px;
 }
 .contacts-link {
   font-style: normal;
@@ -443,6 +493,11 @@ header .container {
 
 /* -----Footer section----- */
 .footer {
+  background: var(--grey-background-color);
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
   padding: 56px 0;
 }
 .footer-copy {
@@ -451,6 +506,18 @@ header .container {
   line-height: 1.36;
   letter-spacing: 0.2em;
   color: var(--secondary-grey-text-color);
+}
+.footer-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;  
+}
+.footer-list::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  display: block;
+  background-color: var(--primary-black-text-color);
 }
 .footer-link {
   font-weight: 600;
